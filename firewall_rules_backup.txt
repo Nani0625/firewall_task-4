@@ -1,0 +1,17 @@
+# Firewall Rules Backup (UFW - Linux)
+# Date: 2025-10-26
+# Host: Kali Linux
+
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp (OpenSSH)            ALLOW IN    Anywhere
+23/tcp                      DENY IN     Anywhere
+80/tcp (HTTP)               ALLOW IN    Anywhere
+443/tcp (HTTPS)             ALLOW IN    Anywhere
+
+# End of Rules

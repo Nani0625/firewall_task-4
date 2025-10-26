@@ -1,0 +1,38 @@
+# Firewall Commands (UFW - Linux)
+# Date: 2025-10-26
+# Host: Kali Linux
+
+# 1. Update & Install UFW
+sudo apt update && sudo apt install ufw -y
+
+# 2. Enable UFW
+sudo ufw enable
+
+# 3. Check UFW status
+sudo ufw status verbose
+
+# 4. Set default policies
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# 5. List current firewall rules
+sudo ufw status numbered
+
+# 6. Block inbound traffic on port 23 (Telnet)
+sudo ufw deny 23
+
+# 7. Allow SSH (port 22)
+sudo ufw allow 22/tcp
+
+# 8. Test rule with Telnet
+sudo apt install telnet -y
+telnet localhost 23
+
+# 9. Remove the Telnet block rule
+sudo ufw delete deny 23
+
+# 10. Verify final rules
+sudo ufw status verbose
+
+# 11. Disable UFW (optional)
+sudo ufw disable
